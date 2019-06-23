@@ -19,6 +19,17 @@
   </head>
   <body>
     <div class="container">
+      <div class="row" id='gifAndSearch'>
+        <div class="col-md-6">
+          <p>Add An Artist</p>
+          <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Artist" aria-label="Artist" aria-describedby="basic-addon2">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button">Submit</button>
+              </div>
+            </div>
+        </div>
+      </div>
         
     </div>
     <!--jQuery CDN-->
@@ -28,7 +39,10 @@
       crossorigin="anonymous"
     ></script>
 
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
     <!--custom JS-->
     <script src="./assets/javascript/javascript.js"></script>
   </body>
 </html>
+
