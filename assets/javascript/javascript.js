@@ -39,6 +39,10 @@ var createButtonsFromArray = function(arr) {
   }
 };
 
+/*
+function takes in a string and creates a query using axios to gify and
+will output the returned gifs to the display
+*/
 var queriesTheInputAndDisplaysGifsToDisplay = function(stringToQuery) {
   var APIKEY = "mnC6R0UR5Gi6CHuOXic2w54GdnD5T0Qi";
   var gifArray = [];
@@ -95,6 +99,10 @@ var queriesTheInputAndDisplaysGifsToDisplay = function(stringToQuery) {
     });
 };
 
+/*
+when an img is clicked, the gif still is converted into a functional gif and 
+if it is a functional gif, it will be converted into a still gif
+*/
 $(document.body).on("click", "img", function(e) {
   var APIKEY = "mnC6R0UR5Gi6CHuOXic2w54GdnD5T0Qi";
   var gifyId = $(this).attr("gifyid");
@@ -118,11 +126,19 @@ $(document.body).on("click", "img", function(e) {
   });
 });
 
+/*
+  when a button is clicked, the text of the buttons gets used
+  as a query for new gif
+*/
 $(document.body).on("click", ".gifButton", function() {
   console.log($(this).text())
   queriesTheInputAndDisplaysGifsToDisplay($(this).text())
 });
 
+/*
+  once the submit button is clicked, a new button is created 
+  with the text that was input
+*/
 $("#submitButton").on("click", function() {
   var inputString = $("#inputString").val().trim();
   var array2 =  topics.map(function(x){ return x.toUpperCase() }) 
@@ -134,6 +150,10 @@ $("#submitButton").on("click", function() {
 
 });
 
+/*
+  if enter is hit on the input line, then it will
+  click the submit button
+*/
 $("#inputString").keyup(function(event) {
   if (event.originalEvent.keyCode === 13) {
     $('#submitButton').click();
