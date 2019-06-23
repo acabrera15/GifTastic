@@ -133,3 +133,9 @@ $("#submitButton").on("click", function() {
   $("#inputString").val('');
 
 });
+
+$("#inputString").keyup(function(event) {
+  if (event.originalEvent.keyCode === 13) {
+    $('#submitButton').click();
+  }
+})
