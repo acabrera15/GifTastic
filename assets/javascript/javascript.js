@@ -129,7 +129,7 @@ $("#submitButton").on("click", function() {
   if (!array2.includes(inputString.toUpperCase())) {
     topics.push(inputString);
     createButtonsFromArray(topics);
-    $("#inputString").val('');
   }
+  $("#inputString").val('');
 
 });
