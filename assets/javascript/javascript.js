@@ -43,6 +43,7 @@ var createButtonsFromArray = function(arr) {
 var queriesTheInputAndDisplaysGifsToDisplay = function(stringToQuery) {
   var APIKEY = "mnC6R0UR5Gi6CHuOXic2w54GdnD5T0Qi";
   var gifArray = [];
+  $(".cardRows").remove();
 
   axios({
     url: `http://api.giphy.com/v1/gifs/search?q=${stringToQuery}&api_key=${APIKEY}&limit=6`,
@@ -58,10 +59,10 @@ var queriesTheInputAndDisplaysGifsToDisplay = function(stringToQuery) {
         if (i === 0 || i % 3 === 0) {
           if (i % 3 === 0 && i !== 0) {
             newRow.append(newCardDeck);
-            $("#gifAndSearch").prepend(newRow);
+            $("#gifAndSearch").append(newRow);
             console.log("mega if");
           }
-          newRow = $("<div class='row'></div>");
+          newRow = $("<div class='row cardRows'></div>");
           newCardDeck = $("<div class='card-deck'></div>");
           console.log("if");
           newCardDeck.append(
@@ -88,7 +89,7 @@ var queriesTheInputAndDisplaysGifsToDisplay = function(stringToQuery) {
       }
       newRow.append(newCardDeck);
 
-      $("#gifAndSearch").prepend(newRow);
+      $("#gifAndSearch").append(newRow);
     })
     .catch(function(err) {
       console.log(err);
