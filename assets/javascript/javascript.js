@@ -62,7 +62,7 @@ var queriesTheInputAndDisplaysGifsToDisplay = function(stringToQuery) {
             console.log("mega if");
           }
           newRow = $("<div class='row cardRows'></div>");
-          newCardDeck = $("<div class='card-deck'></div>");
+          newCardDeck = $("<div class='mb-4 card-deck'></div>");
           console.log("if");
           newCardDeck.append(
             `<div class='card'><div class='card-body'><h5 class='card-title'>Rating: ${
