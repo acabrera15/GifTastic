@@ -24,14 +24,14 @@ var createButtonsFromArray = function(arr) {
     if (i === 0 || i % 12 === 0) {
       buttonHolder.prepend(`<div class='row' id= 'row-${i}'></div>`);
       $(`#row-${i}`).append(
-        `<div class='col'><button type='button' class='mb-4 gifButton btn btn-primary'>${
+        `<div class='col'><button type='button' class='h-75 w-100 mb-4 gifButton btn btn-primary'>${
           arr[i]
         }</button></div>`
       );
       rowCreaterIndex = i;
     } else {
       $(`#row-${rowCreaterIndex}`).append(
-        `<div class='col'><button type='button' class=' mb-4 gifButton btn btn-primary'>${
+        `<div class='col'><button type='button' class=' h-75 w-100 mb-4 gifButton btn btn-primary'>${
           arr[i]
         }</button></div>`
       );
