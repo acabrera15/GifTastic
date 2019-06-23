@@ -46,7 +46,7 @@ var queriesTheInputAndDisplaysGifsToDisplay = function(stringToQuery) {
   $(".cardRows").remove();
 
   axios({
-    url: `http://api.giphy.com/v1/gifs/search?q=${stringToQuery}&api_key=${APIKEY}&limit=6`,
+    url: `https://api.giphy.com/v1/gifs/search?q=${stringToQuery}&api_key=${APIKEY}&limit=6`,
     method: "GET"
   })
     .then(function(response) {
