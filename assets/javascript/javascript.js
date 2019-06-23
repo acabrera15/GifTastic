@@ -17,10 +17,10 @@ $(document).ready(function() {
   display
 */
 var createButtonsFromArray = function(arr) {
-  $('#buttonHolder').empty();
+  $("#buttonHolder").empty();
   var rowCreaterIndex = 0;
-  var buttonHolder = $('<div class="mt-4 mb-4" id="buttonHolder"></div>')
-  $('.container').prepend(buttonHolder);
+  var buttonHolder = $('<div class="mt-4 mb-4" id="buttonHolder"></div>');
+  $(".container").prepend(buttonHolder);
   for (var i = 0; i < arr.length; i++) {
     if (i === 0 || i % 12 === 0) {
       buttonHolder.prepend(`<div class='row' id= 'row-${i}'></div>`);
@@ -67,7 +67,9 @@ var queriesTheInputAndDisplaysGifsToDisplay = function(stringToQuery) {
           newCardDeck.append(
             `<div class='card'><div class='card-body'><h5 class='card-title'>Rating: ${
               gifArray[i].rating
-            }</h5><img class= "card-img-top" animated='false' gifyId="${gifArray[i].id}" src="${
+            }</h5><img class= "card-img-top" animated='false' gifyId="${
+              gifArray[i].id
+            }" src="${
               gifArray[i].images["480w_still"].url
             }" height="268px" width="246px" ></div></div>`
           );
@@ -76,7 +78,9 @@ var queriesTheInputAndDisplaysGifsToDisplay = function(stringToQuery) {
           newCardDeck.append(
             `<div class='card'><div class='card-body'><h5 class='card-title'>Rating: ${
               gifArray[i].rating
-            }</h5><img class="card-img-top" animated='false' gifyId="${gifArray[i].id}" src="${
+            }</h5><img class="card-img-top" animated='false' gifyId="${
+              gifArray[i].id
+            }" src="${
               gifArray[i].images["480w_still"].url
             }" height="268px" width="246px"></div></div>`
           );
@@ -98,26 +102,30 @@ $(document.body).on("click", "img", function(e) {
     url: `https://api.giphy.com/v1/gifs/${gifyId}?api_key=${APIKEY}`,
     method: "GET"
   }).then(function(response) {
-
     if ($(e.currentTarget).attr("animated") === "false") {
-
-      $(e.currentTarget).attr("src", `${response.data.data.images.original.url}`);
-      $(e.currentTarget).attr("animated", "true")
+      $(e.currentTarget).attr(
+        "src",
+        `${response.data.data.images.original.url}`
+      );
+      $(e.currentTarget).attr("animated", "true");
     } else if ($(e.currentTarget).attr("animated") === "true") {
-      $(e.currentTarget).attr("src", `${response.data.data.images["480w_still"].url}`);
-      $(e.currentTarget).attr("animated", "false")
-
+      $(e.currentTarget).attr(
+        "src",
+        `${response.data.data.images["480w_still"].url}`
+      );
+      $(e.currentTarget).attr("animated", "false");
     }
   });
 });
 
 $(document.body).on("click", ".gifButton", function() {
-
+  console.log($(this).text())
+  queriesTheInputAndDisplaysGifsToDisplay($(this).text())
 });
 
-$('#submitButton').on('click', function() {
-  var inputString = $('#inputString').val();
-  console.log(inputString)
+$("#submitButton").on("click", function() {
+  var inputString = $("#inputString").val();
+  console.log(inputString);
   topics.push(inputString);
   createButtonsFromArray(topics);
-})
+});
