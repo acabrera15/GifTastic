@@ -126,7 +126,7 @@ $(document.body).on("click", ".gifButton", function() {
 $("#submitButton").on("click", function() {
   var inputString = $("#inputString").val().trim();
   var array2 =  topics.map(function(x){ return x.toUpperCase() }) 
-  if (!array2.includes(inputString.toUpperCase())) {
+  if (!array2.includes(inputString.toUpperCase()) && inputString != '') {
     topics.push(inputString);
     createButtonsFromArray(topics);
   }
