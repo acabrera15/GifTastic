@@ -17,10 +17,13 @@ $(document).ready(function() {
   display
 */
 var createButtonsFromArray = function(arr) {
+  $('#buttonHolder').empty();
   var rowCreaterIndex = 0;
+  var buttonHolder = $('<div class="mt-4 mb-4" id="buttonHolder"></div>')
+  $('.container').prepend(buttonHolder);
   for (var i = 0; i < arr.length; i++) {
     if (i === 0 || i % 12 === 0) {
-      $(".container").prepend(`<div class='row' id= 'row-${i}'></div>`);
+      buttonHolder.prepend(`<div class='row' id= 'row-${i}'></div>`);
       $(`#row-${i}`).append(
         `<div class='col'><button type='button' class='gifButton btn btn-primary'>${
           arr[i]
@@ -108,4 +111,13 @@ $(document.body).on("click", "img", function(e) {
   });
 });
 
-$(document.body).on("click", ".gifButton", function() {});
+$(document.body).on("click", ".gifButton", function() {
+
+});
+
+$('#submitButton').on('click', function() {
+  var inputString = $('#inputString').val();
+  console.log(inputString)
+  topics.push(inputString);
+  createButtonsFromArray(topics);
+})
