@@ -9,7 +9,6 @@ let topics = [
 
 $(document).ready(function() {
   createButtonsFromArray(topics);
-  queriesTheInputAndDisplaysGifsToDisplay("metallica");
 });
 
 /*
