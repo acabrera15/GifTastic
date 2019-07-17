@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="upgrade-insecure-requests"
+    />
 
     <!--Bootstrap CDN-->
     <link
@@ -18,21 +21,31 @@
     <link rel="stylesheet" type="text/css" href="./assets/css/styles.css" />
     <title>Giftastic</title>
   </head>
+  
   <body>
     <div class="container">
-      <div class="row justify-content-center" id='gifAndSearch'>
+      <div class="row justify-content-center" id="gifAndSearch">
         <div class="col-md-6">
           <p class="text-center">Add An Artist</p>
           <div class="input-group mb-3">
-              <input type="text" id='inputString' class="form-control" placeholder="Artist" aria-label="Artist" aria-describedby="basic-addon2">
-              <div class="input-group-append">
-                <button class="btn btn-danger" id='submitButton' type="button">Submit</button>
-              </div>
+            <input
+              type="text"
+              id="inputString"
+              class="form-control"
+              placeholder="Artist"
+              aria-label="Artist"
+              aria-describedby="basic-addon2"
+            />
+            <div class="input-group-append">
+              <button class="btn btn-danger" id="submitButton" type="button">
+                Submit
+              </button>
             </div>
+          </div>
         </div>
       </div>
-        
     </div>
+
     <!--jQuery CDN-->
     <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -40,10 +53,10 @@
       crossorigin="anonymous"
     ></script>
 
+    <!--Axios CDN-->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
     <!--custom JS-->
     <script src="./assets/javascript/javascript.js"></script>
   </body>
 </html>
-
